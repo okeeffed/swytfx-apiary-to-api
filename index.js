@@ -86,21 +86,25 @@ const main = async () => {
       tempEndpointObj.url = value;
 
       // Get Required Body values
-      // const attributesArr = await machineColumnContent.$$(".row.attributesKit");
+      const requestExample = await machineColumnContent.$(".request");
 
-      // if (attributesArr && attributesArr.length) {
-      //   for (const attribute of attributesArr) {
-      //     const attributeKit = await attribute.$(".attributesKit");
-      //     const attributeKitValue = await attributeKit.evaluate((el) =>
-      //       el.textContent.trim()
-      //     );
+      if (requestExample) {
+        const requestBody = await requestExample.$(".rawExampleBody");
+        const requestBodyValue = await requestBody?.evaluate((el) =>
+          el.textContent.trim()
+        );
 
-      //     const [name, isRequired, type, description] =
-      //       attributeKitValue.split(" ");
-
-      //     console.log("@ ATTR", name, isRequired, type, description);
-      //   }
-      // }
+        console.log("@ REQ", requestBodyValue);
+        tempEndpointObj.request = {
+          requestExampleValue: requestBodyValue
+            ? JSON.parse(requestBodyValue)
+            : null,
+        };
+      } else {
+        tempEndpointObj.request = {
+          requestExampleValue: {},
+        };
+      }
 
       // Get Parameters
       const paramsListArr = await machineColumnContent.$$(".parameterRow");

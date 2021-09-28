@@ -2,6 +2,11 @@
   "endpoints": [
     {
       "url": "/auth/refresh/",
+      "request": {
+        "requestExampleValue": {
+          "apiKey": "7r4hTa2Yb..."
+        }
+      },
       "parameters": [],
       "responses": [
         {
@@ -24,6 +29,9 @@
     },
     {
       "url": "/auth/logout/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [],
       "responses": [
         {
@@ -45,6 +53,9 @@
     },
     {
       "url": "/user/apiKeys/scope/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [],
       "responses": [
         {
@@ -83,6 +94,9 @@
     },
     {
       "url": "/user/apiKeys/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [],
       "responses": [
         {
@@ -109,6 +123,11 @@
     },
     {
       "url": "/user/apiKeys/revoke/",
+      "request": {
+        "requestExampleValue": {
+          "keyId": "dcr_7mkRWn..."
+        }
+      },
       "parameters": [],
       "responses": [
         {
@@ -121,6 +140,9 @@
     },
     {
       "url": "/user/apiKeys/revokeAll/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [],
       "responses": [
         {
@@ -142,6 +164,9 @@
     },
     {
       "url": "/address/deposit/assetCode/variantId",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "assetCode",
@@ -202,6 +227,9 @@
     },
     {
       "url": "/address/deposit/assetId/networkId?version=2",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "assetId",
@@ -262,6 +290,13 @@
     },
     {
       "url": "/address/deposit/assetCode/variantId",
+      "request": {
+        "requestExampleValue": {
+          "address": {
+            "name": "My BTC Address"
+          }
+        }
+      },
       "parameters": [
         {
           "paramKeyValue": "assetCode",
@@ -313,6 +348,9 @@
     },
     {
       "url": "/address/withdraw/assetCode/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "assetCode",
@@ -359,6 +397,24 @@
     },
     {
       "url": "/address/withdraw/assetCode/",
+      "request": {
+        "requestExampleValue": {
+          "address": {
+            "address_details": {
+              "address": "18PpTWTShSsHuJ5ze23gU2rmsQbAVVMZia",
+              "destination_tag": "654987312",
+              "payment_id": "654987312",
+              "memo": "memo text",
+              "biller_code": "321654",
+              "bsb": "654-312",
+              "payid": "email@address.example",
+              "reference": "654987312519",
+              "message": "b&2H_8s!..."
+            },
+            "name": "My BTC Address"
+          }
+        }
+      },
       "parameters": [],
       "responses": [
         {
@@ -399,6 +455,9 @@
     },
     {
       "url": "/address/withdraw/addressId/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "addressId",
@@ -424,6 +483,9 @@
     },
     {
       "url": "/address/withdraw/verify/token/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "token",
@@ -449,6 +511,9 @@
     },
     {
       "url": "/address/withdraw/bsb-verify/bsb/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "bsb",
@@ -485,6 +550,9 @@
     },
     {
       "url": "/address/check/assetCode/addressId/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "assetCode",
@@ -515,6 +583,9 @@
     },
     {
       "url": "/user/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [],
       "responses": [
         {
@@ -571,6 +642,18 @@
     },
     {
       "url": "/user/settings/",
+      "request": {
+        "requestExampleValue": {
+          "data": {
+            "favouriteAsset": {
+              "assetId": 3,
+              "favStatus": true
+            },
+            "analyticsOptOut": false,
+            "toggleSMSRecovery": true
+          }
+        }
+      },
       "parameters": [],
       "responses": [
         {
@@ -627,6 +710,9 @@
     },
     {
       "url": "/user/verification/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [],
       "responses": [
         {
@@ -654,6 +740,13 @@
     },
     {
       "url": "/user/verification/storeGreenId/",
+      "request": {
+        "requestExampleValue": {
+          "verification": {
+            "id": "AsdfSAfs"
+          }
+        }
+      },
       "parameters": [],
       "responses": [
         {
@@ -673,6 +766,9 @@
     },
     {
       "url": "/user/verification/email/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [],
       "responses": [
         {
@@ -696,6 +792,9 @@
     },
     {
       "url": "/user/verification/email/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [],
       "responses": [
         {
@@ -719,6 +818,9 @@
     },
     {
       "url": "/user/verification/phone/token/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "token",
@@ -747,6 +849,9 @@
     },
     {
       "url": "/user/verification/phone/token/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [],
       "responses": [
         {
@@ -770,6 +875,9 @@
     },
     {
       "url": "/user/affiliations/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [],
       "responses": [
         {
@@ -783,6 +891,9 @@
     },
     {
       "url": "/user/balance/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [],
       "responses": [
         {
@@ -807,6 +918,13 @@
     },
     {
       "url": "/user/currency/",
+      "request": {
+        "requestExampleValue": {
+          "profile": {
+            "defaultAsset": 1
+          }
+        }
+      },
       "parameters": [],
       "responses": [
         {
@@ -863,6 +981,9 @@
     },
     {
       "url": "/user/statistics/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [],
       "responses": [
         {
@@ -887,6 +1008,9 @@
     },
     {
       "url": "/user/progress/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [],
       "responses": [
         {
@@ -913,6 +1037,9 @@
     },
     {
       "url": "/user/promotions/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [],
       "responses": [
         {
@@ -936,6 +1063,9 @@
     },
     {
       "url": "/user/taxReport/?from=1593518400000&offset=36000000&to=1561939200000&type=csv",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "from",
@@ -1072,6 +1202,9 @@
     },
     {
       "url": "/charts/getBars/baseAsset/secondaryAsset/side/?resolution=&timeStart=1517458855347&timeEnd=1517458855347&limit=5000",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "baseAsset",
@@ -1141,6 +1274,9 @@
     },
     {
       "url": "/charts/getLatestBar/baseAsset/secondaryAsset/side/?resolution=",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "baseAsset",
@@ -1189,6 +1325,9 @@
     },
     {
       "url": "/charts/settings",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [],
       "responses": [
         {
@@ -1206,6 +1345,9 @@
     },
     {
       "url": "/charts/resolveSymbol/baseAsset/secondaryAsset/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "baseAsset",
@@ -1241,6 +1383,9 @@
     },
     {
       "url": "/charts/v2/getBars/baseAsset/secondaryAsset/side/?resolution=&timeStart=1517458855347&timeEnd=1517458855347&limit=5000",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "baseAsset",
@@ -1310,6 +1455,9 @@
     },
     {
       "url": "/charts/v2/getLatestBar/baseAsset/secondaryAsset/side/?resolution=",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "baseAsset",
@@ -1358,6 +1506,9 @@
     },
     {
       "url": "/charts/v2/settings",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [],
       "responses": [
         {
@@ -1375,6 +1526,9 @@
     },
     {
       "url": "/charts/v2/resolveSymbol/baseAsset/secondaryAsset/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "baseAsset",
@@ -1410,6 +1564,13 @@
     },
     {
       "url": "/funds/withdraw/assetCode/",
+      "request": {
+        "requestExampleValue": {
+          "quantity": "1.243",
+          "address_id": 3,
+          "reason": 1
+        }
+      },
       "parameters": [
         {
           "paramKeyValue": "assetCode",
@@ -1439,6 +1600,9 @@
     },
     {
       "url": "/funds/withdrawalPermissions/assetCode/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "assetCode",
@@ -1467,6 +1631,9 @@
     },
     {
       "url": "/history/withdraw/asset/?limit=&page=&sortBy=",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "asset",
@@ -1513,6 +1680,9 @@
     },
     {
       "url": "/history/deposit/asset/?limit=&page=&sortBy=",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "asset",
@@ -1559,6 +1729,9 @@
     },
     {
       "url": "/history/withdraw/?limit=&page=&sortBy=",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "limit",
@@ -1600,6 +1773,9 @@
     },
     {
       "url": "/history/deposit/?limit=&page=&sortBy=",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "limit",
@@ -1641,6 +1817,9 @@
     },
     {
       "url": "/history/all/type/assetId/?limit=&page=&sortBy=",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "limit",
@@ -1691,6 +1870,9 @@
     },
     {
       "url": "/history/affiliate/?limit=&page=&sortBy=",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "limit",
@@ -1734,6 +1916,9 @@
     },
     {
       "url": "/limits/withdrawal/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [],
       "responses": [
         {
@@ -1749,6 +1934,9 @@
     },
     {
       "url": "/live-rates/asset/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "asset",
@@ -1779,6 +1967,9 @@
     },
     {
       "url": "/markets/assets/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [],
       "responses": [
         {
@@ -1844,6 +2035,9 @@
     },
     {
       "url": "/markets/info/basic/assetCode/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "assetCode",
@@ -1873,6 +2067,9 @@
     },
     {
       "url": "/markets/info/detail/assetCode/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "assetCode",
@@ -1918,6 +2115,9 @@
     },
     {
       "url": "/alerts?primary=1&secondary=3&limit=10&from=1517458855347&to=1517458855347&status=1",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "primary",
@@ -1967,6 +2167,11 @@
     },
     {
       "url": "/alerts/primary/secondary",
+      "request": {
+        "requestExampleValue": {
+          "price": 1000
+        }
+      },
       "parameters": [
         {
           "paramKeyValue": "primary",
@@ -1988,6 +2193,11 @@
     },
     {
       "url": "/alerts",
+      "request": {
+        "requestExampleValue": {
+          "priceAlertUuid": "pra_G2Z7pPmKBhERjSywDQZG1z"
+        }
+      },
       "parameters": [],
       "responses": [
         {
@@ -1998,6 +2208,14 @@
     },
     {
       "url": "/orders/rate/",
+      "request": {
+        "requestExampleValue": {
+          "buy": "BTC",
+          "sell": "USD",
+          "amount": "1000",
+          "limit": "USD"
+        }
+      },
       "parameters": [],
       "responses": [
         {
@@ -2033,6 +2251,16 @@
     },
     {
       "url": "/orders/",
+      "request": {
+        "requestExampleValue": {
+          "primary": "USD",
+          "secondary": "BTC",
+          "quantity": "1000",
+          "assetQuantity": "USD",
+          "orderType": 0,
+          "trigger": "52000"
+        }
+      },
       "parameters": [],
       "responses": [
         {
@@ -2063,6 +2291,14 @@
     },
     {
       "url": "/orders/",
+      "request": {
+        "requestExampleValue": {
+          "orderUuid": "ord_F5Docr9bjJuHs3BNMiSdrn",
+          "quantity": 1000,
+          "assetQuantity": "USD",
+          "trigger": 6000
+        }
+      },
       "parameters": [],
       "responses": [
         {
@@ -2075,6 +2311,14 @@
     },
     {
       "url": "/user/balance/dust/",
+      "request": {
+        "requestExampleValue": {
+          "selected": [
+            1
+          ],
+          "primary": 1
+        }
+      },
       "parameters": [],
       "responses": [
         {
@@ -2098,6 +2342,9 @@
     },
     {
       "url": "/orders/orderUuid/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "orderUuid",
@@ -2114,6 +2361,9 @@
     },
     {
       "url": "/orders/assetCode?limit=&page=",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "assetCode",
@@ -2162,6 +2412,9 @@
     },
     {
       "url": "/orders/byId/orderUuid",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "orderUuid",
@@ -2198,6 +2451,9 @@
     },
     {
       "url": "/templates/getUserTemplates/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [],
       "responses": [
         {
@@ -2227,6 +2483,9 @@
     },
     {
       "url": "/templates/getUserTemplateStats/?templateUuid=reo_BzJYc...",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "templateUuid",
@@ -2258,6 +2517,17 @@
     },
     {
       "url": "/templates/createUserTemplate/",
+      "request": {
+        "requestExampleValue": {
+          "template": {
+            "3": 1,
+            "5": 1
+          },
+          "primaryAssetId": "1",
+          "label": "BTC & ETH",
+          "source": "DEPOSIT"
+        }
+      },
       "parameters": [],
       "responses": [
         {
@@ -2274,6 +2544,9 @@
     },
     {
       "url": "/templates/templateUuid/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "templateUuid",
@@ -2290,6 +2563,15 @@
     },
     {
       "url": "/swap/",
+      "request": {
+        "requestExampleValue": {
+          "buy": "5",
+          "sell": "3",
+          "limitAsset": 3,
+          "limitQty": "0.5",
+          "intermediateAssetId": "1"
+        }
+      },
       "parameters": [],
       "responses": [
         {
@@ -2323,6 +2605,9 @@
     },
     {
       "url": "/compare/exchange/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "exchange",
@@ -2344,6 +2629,9 @@
     },
     {
       "url": "/messages/latest/limit/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "limit",
@@ -2371,6 +2659,9 @@
     },
     {
       "url": "/messages/announcements/limit",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "limit",
@@ -2398,6 +2689,9 @@
     },
     {
       "url": "/error/authentication_failed",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [],
       "responses": [
         {
@@ -2413,6 +2707,9 @@
     },
     {
       "url": "/info/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [],
       "responses": [
         {
@@ -2427,6 +2724,9 @@
     },
     {
       "url": "/portfolio/tradePriceHistory/denotedAssetId/",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "denotedAssetId",
@@ -2447,6 +2747,9 @@
     },
     {
       "url": "/portfolio/assetHistory/assetId/?page=&limit=&sortKey=&sortDirection=&startDate=&endDate=&type=&status=",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "assetId",
@@ -2524,6 +2827,9 @@
     },
     {
       "url": "/portfolio/assetHistory/all/?page=&limit=&sortKey=&sortDirection=&startDate=&endDate=&type=&status=",
+      "request": {
+        "requestExampleValue": null
+      },
       "parameters": [
         {
           "paramKeyValue": "page",
