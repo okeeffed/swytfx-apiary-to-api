@@ -1,0 +1,16 @@
+{
+  "name": "swyftx-apiary-to-api",
+  "version": "1.0.0",
+  "description": "## Helper notes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^10.4.0",
+    "x-ray": "^2.3.4"
+  }
+}

@@ -1,0 +1,2597 @@
+{
+  "endpoints": [
+    {
+      "url": "/auth/refresh/",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "accessToken": "eyJhbGciOiJSUzI1N...",
+            "scope": "app.account.read ..."
+          }
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/auth/logout/",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "success": "true"
+          }
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/user/apiKeys/scope/",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "app.account.read": {
+              "display": "",
+              "desc": "",
+              "key": "app.account.affiliation",
+              "state": 0
+            },
+            "app.funds.withdraw": {
+              "display": "",
+              "desc": "",
+              "key": "app.account.affiliation",
+              "state": 0
+            },
+            "app.orders.delete": {
+              "display": "",
+              "desc": "",
+              "key": "app.account.affiliation",
+              "state": 0
+            }
+          }
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/user/apiKeys/",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": [
+            {
+              "id": "dcr_16HDA0uUE4VXrSlx",
+              "label": "Master",
+              "scope": "app.account.affiliation app.account.modify ...",
+              "created": "1517316338030"
+            }
+          ]
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/user/apiKeys/revoke/",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "status": "API Key Revoked"
+          }
+        }
+      ]
+    },
+    {
+      "url": "/user/apiKeys/revokeAll/",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "status": "API Keys Revoked"
+          }
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/address/deposit/assetCode/variantId",
+      "parameters": [
+        {
+          "paramKeyValue": "assetCode",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Asset code. See Get Market Assets code for all asset codes"
+        },
+        {
+          "paramKeyValue": "variantId",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "Payment method required for AUD"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "address": [
+              {
+                "id": 1,
+                "code": "AUD",
+                "address_details": {
+                  "address": "18PpTWTShSsHuJ5ze23gU2rmsQbAVVMZia",
+                  "destination_tag": "654987312",
+                  "payment_id": "654987312",
+                  "memo": "memo text",
+                  "biller_code": "321654",
+                  "bsb": "654-312",
+                  "payid": "email@address.example",
+                  "reference": "654987312519",
+                  "message": "b&2H_8s!..."
+                },
+                "time": 1517316338030,
+                "name": "My BTC Address",
+                "type": "deposit"
+              }
+            ]
+          }
+        },
+        {
+          "responseStatusValue": "400",
+          "responseExampleValue": {
+            "error": {
+              "error": "ArgsError",
+              "message": "variantId is not an integer"
+            }
+          }
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/address/deposit/assetId/networkId?version=2",
+      "parameters": [
+        {
+          "paramKeyValue": "assetId",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Asset ID. See Get Market Assets id for all asset ids"
+        },
+        {
+          "paramKeyValue": "networkId",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Network ID for crypto assets"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "address": [
+              {
+                "id": 1,
+                "code": "AUD",
+                "address_details": {
+                  "address": "18PpTWTShSsHuJ5ze23gU2rmsQbAVVMZia",
+                  "destination_tag": "654987312",
+                  "payment_id": "654987312",
+                  "memo": "memo text",
+                  "biller_code": "321654",
+                  "bsb": "654-312",
+                  "payid": "email@address.example",
+                  "reference": "654987312519",
+                  "message": "b&2H_8s!..."
+                },
+                "time": 1517316338030,
+                "name": "My BTC Address",
+                "type": "deposit"
+              }
+            ]
+          }
+        },
+        {
+          "responseStatusValue": "400",
+          "responseExampleValue": {
+            "error": {
+              "error": "ArgsError",
+              "message": "networkId is not an integer"
+            }
+          }
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/address/deposit/assetCode/variantId",
+      "parameters": [
+        {
+          "paramKeyValue": "assetCode",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Asset code. See Get Market Assets code for all market codes"
+        },
+        {
+          "paramKeyValue": "variantId",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Deposit method"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "address": [
+              {
+                "id": 1,
+                "code": "AUD",
+                "address_details": {
+                  "address": "18PpTWTShSsHuJ5ze23gU2rmsQbAVVMZia",
+                  "destination_tag": "654987312",
+                  "payment_id": "654987312",
+                  "memo": "memo text",
+                  "biller_code": "321654",
+                  "bsb": "654-312",
+                  "payid": "email@address.example",
+                  "reference": "654987312519",
+                  "message": "b&2H_8s!..."
+                },
+                "time": 1517316338030,
+                "name": "My BTC Address",
+                "type": "deposit"
+              }
+            ]
+          }
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/address/withdraw/assetCode/",
+      "parameters": [
+        {
+          "paramKeyValue": "assetCode",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Asset code. See Get Market Assets code for all market codes"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "address": [
+              {
+                "id": 1,
+                "code": "AUD",
+                "address_details": {
+                  "address": "18PpTWTShSsHuJ5ze23gU2rmsQbAVVMZia",
+                  "destination_tag": "654987312",
+                  "payment_id": "654987312",
+                  "memo": "memo text",
+                  "biller_code": "321654",
+                  "bsb": "654-312",
+                  "payid": "email@address.example",
+                  "reference": "654987312519",
+                  "message": "b&2H_8s!..."
+                },
+                "time": 1517316338030,
+                "name": "My BTC Address",
+                "type": "withdraw"
+              }
+            ]
+          }
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/address/withdraw/assetCode/",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "address": [
+              {
+                "id": 1,
+                "code": "AUD",
+                "address_details": {
+                  "address": "18PpTWTShSsHuJ5ze23gU2rmsQbAVVMZia",
+                  "destination_tag": "654987312",
+                  "payment_id": "654987312",
+                  "memo": "memo text",
+                  "biller_code": "321654",
+                  "bsb": "654-312",
+                  "payid": "email@address.example",
+                  "reference": "654987312519",
+                  "message": "b&2H_8s!..."
+                },
+                "time": 1517316338030,
+                "name": "My BTC Address",
+                "type": "withdraw"
+              }
+            ]
+          }
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/address/withdraw/addressId/",
+      "parameters": [
+        {
+          "paramKeyValue": "addressId",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "The address id to delete"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "204",
+          "responseExampleValue": null
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/address/withdraw/verify/token/",
+      "parameters": [
+        {
+          "paramKeyValue": "token",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Token as given in email"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": null
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/address/withdraw/bsb-verify/bsb/",
+      "parameters": [
+        {
+          "paramKeyValue": "bsb",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "BSB for bank"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "durationMs": 5,
+            "status": "Ok",
+            "statusDescription": "Operation completed successfully",
+            "address": "The Bendigo Centre",
+            "bankCode": "BBL",
+            "bsb": "633-000",
+            "city": "Bendigo",
+            "closed": false,
+            "postCode": "3550",
+            "state": "VIC"
+          }
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/address/check/assetCode/addressId/",
+      "parameters": [
+        {
+          "paramKeyValue": "assetCode",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Must be ETH or an ERC-20 Asset"
+        },
+        {
+          "paramKeyValue": "addressId",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Address to be checked"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": null
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/user/",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "profile": {
+              "dob": 757346400000,
+              "name": {
+                "first": "John",
+                "last": "Doe"
+              },
+              "email": "john.doe@example.com",
+              "phone": "+614XXXXXXXX",
+              "currency": {
+                "id": 1,
+                "code": "AUD"
+              },
+              "user_hash": "xxxx...xxxx",
+              "metadata": {
+                "mfa_enabled": true,
+                "mfa_enrolled": true
+              },
+              "userSettings": {
+                "favouriteAssets": {
+                  "assetId": true
+                },
+                "analyticsOptOut": true,
+                "activeAffil": true,
+                "disableSMSRecovery": false,
+                "dashboardSettings": [
+                  {
+                    "name": "favourites",
+                    "display": false
+                  },
+                  {
+                    "name": "announcement",
+                    "display": true
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/user/settings/",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "profile": {
+              "dob": 757346400000,
+              "name": {
+                "first": "John",
+                "last": "Doe"
+              },
+              "email": "john.doe@example.com",
+              "phone": "+614XXXXXXXX",
+              "currency": {
+                "id": 1,
+                "code": "AUD"
+              },
+              "user_hash": "xxxx...xxxx",
+              "metadata": {
+                "mfa_enabled": true,
+                "mfa_enrolled": true
+              },
+              "userSettings": {
+                "favouriteAssets": {
+                  "assetId": true
+                },
+                "analyticsOptOut": true,
+                "activeAffil": true,
+                "disableSMSRecovery": false,
+                "dashboardSettings": [
+                  {
+                    "name": "favourites",
+                    "display": false
+                  },
+                  {
+                    "name": "announcement",
+                    "display": true
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/user/verification/",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "verification": {
+              "status": "unverified",
+              "email": "verified",
+              "mfa": "unverified",
+              "phone": "verified",
+              "identity": "unverified"
+            }
+          }
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/user/verification/storeGreenId/",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": null
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/user/verification/email/",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "success": true,
+            "emailVerified": true,
+            "msg": "Your email is verified"
+          }
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/user/verification/email/",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "success": true,
+            "emailVerified": true,
+            "msg": "Your email is verified"
+          }
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/user/verification/phone/token/",
+      "parameters": [
+        {
+          "paramKeyValue": "token",
+          "paramRequirementValue": "Optional"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "success": true,
+            "phoneVerified": true,
+            "msg": "Your email is verified"
+          }
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/user/verification/phone/token/",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "success": true,
+            "phoneVerified": true,
+            "msg": "Your email is verified"
+          }
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/user/affiliations/",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "referral_link": "https://swyftx.com.au/?ref=XXXXXXXXXXX",
+            "referred_users": 1
+          }
+        }
+      ]
+    },
+    {
+      "url": "/user/balance/",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": [
+            {
+              "assetId": 1,
+              "availableBalance": "100.2464"
+            }
+          ]
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/user/currency/",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "profile": {
+              "dob": 757346400000,
+              "name": {
+                "first": "John",
+                "last": "Doe"
+              },
+              "email": "john.doe@example.com",
+              "phone": "+614XXXXXXXX",
+              "currency": {
+                "id": 1,
+                "code": "AUD"
+              },
+              "user_hash": "xxxx...xxxx",
+              "metadata": {
+                "mfa_enabled": true,
+                "mfa_enrolled": true
+              },
+              "userSettings": {
+                "favouriteAssets": {
+                  "assetId": true
+                },
+                "analyticsOptOut": true,
+                "activeAffil": true,
+                "disableSMSRecovery": false,
+                "dashboardSettings": [
+                  {
+                    "name": "favourites",
+                    "display": false
+                  },
+                  {
+                    "name": "announcement",
+                    "display": true
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/user/statistics/",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "orders": 491,
+            "traded": 20614.3484,
+            "deposited": 5420.37,
+            "withdrawn": 9400.58
+          }
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/user/progress/",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "signUp": true,
+            "verified": true,
+            "deposit": true,
+            "trade": false,
+            "refer": false,
+            "completed": false
+          }
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/user/promotions/",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "desc": "50% off fees first week",
+            "ref": "bonusfee50",
+            "expiry": 1593525600000
+          }
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/user/taxReport/?from=1593518400000&offset=36000000&to=1561939200000&type=csv",
+      "parameters": [
+        {
+          "paramKeyValue": "from",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Start date for tax report in ms"
+        },
+        {
+          "paramKeyValue": "offset",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Optional timezone offset in ms. Negative numbers allowed."
+        },
+        {
+          "paramKeyValue": "to",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "End date for tax report in ms"
+        },
+        {
+          "paramKeyValue": "type",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Report output format. Either csv, json or pdf"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "cryptoStatement": [
+              {
+                "date": "4/06/2020",
+                "time": "14:21:03",
+                "event": "sell",
+                "asset": "AUD",
+                "amount": "500.00000000",
+                "currency": "USD",
+                "value": "343.35520439",
+                "rate": "0.68671041",
+                "audValue": "500.00000000",
+                "feeAmount": "null",
+                "feeAsset": "null",
+                "feeAudValue": "null",
+                "gst": "null",
+                "exGST": "null",
+                "depositedTo": "null",
+                "withdrawnTo": "null",
+                "withdrawalFee": "null",
+                "reference": "null",
+                "txId": "null",
+                "uuid": "null"
+              }
+            ],
+            "fiatStatement": [
+              {
+                "date": "4/06/2020",
+                "time": "14:21:03",
+                "event": "sell",
+                "asset": "AUD",
+                "amount": "500.00000000",
+                "currency": "USD",
+                "value": "343.35520439",
+                "rate": "0.68671041",
+                "audValue": "500.00000000",
+                "feeAmount": "null",
+                "feeAsset": "null",
+                "feeAudValue": "null",
+                "gst": "null",
+                "exGST": "null",
+                "depositedTo": "null",
+                "withdrawnTo": "null",
+                "withdrawalFee": "null",
+                "reference": "null",
+                "txId": "null",
+                "uuid": "null"
+              }
+            ],
+            "openingStatements": {
+              "cryptoStatement": [
+                {
+                  "date": "30/06/2020",
+                  "time": "23:59:59",
+                  "event": "open position",
+                  "asset": "USDT",
+                  "amount": "23.84373701",
+                  "currency": "null",
+                  "value": "null",
+                  "rate": "null",
+                  "audValue": "33.04021869"
+                }
+              ],
+              "fiatStatement": [
+                {
+                  "date": "30/06/2020",
+                  "time": "23:59:59",
+                  "event": "open position",
+                  "asset": "USDT",
+                  "amount": "23.84373701",
+                  "currency": "null",
+                  "value": "null",
+                  "rate": "null",
+                  "audValue": "33.04021869"
+                }
+              ]
+            },
+            "closingStatements": {
+              "cryptoStatement": [
+                {
+                  "date": "30/06/2020",
+                  "time": "23:59:59",
+                  "event": "open position",
+                  "asset": "USDT",
+                  "amount": "23.84373701",
+                  "currency": "null",
+                  "value": "null",
+                  "rate": "null",
+                  "audValue": "33.04021869"
+                }
+              ],
+              "fiatStatement": [
+                {
+                  "date": "30/06/2020",
+                  "time": "23:59:59",
+                  "event": "open position",
+                  "asset": "USDT",
+                  "amount": "23.84373701",
+                  "currency": "null",
+                  "value": "null",
+                  "rate": "null",
+                  "audValue": "33.04021869"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/charts/getBars/baseAsset/secondaryAsset/side/?resolution=&timeStart=1517458855347&timeEnd=1517458855347&limit=5000",
+      "parameters": [
+        {
+          "paramKeyValue": "baseAsset",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Asset code. See Get Market Assets code for all market codes"
+        },
+        {
+          "paramKeyValue": "secondaryAsset",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Asset code. See Get Market Assets code for all market codes"
+        },
+        {
+          "paramKeyValue": "resolution",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "The time span that the candles will cover"
+        },
+        {
+          "paramKeyValue": "side",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Side ask or bid"
+        },
+        {
+          "paramKeyValue": "timeStart",
+          "paramRequirementValue": "Required"
+        },
+        {
+          "paramKeyValue": "timeEnd",
+          "paramRequirementValue": "Required"
+        },
+        {
+          "paramKeyValue": "limit",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "Number of candles to retrieve, limit 10000"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": [
+            {
+              "time": 1501545600000,
+              "open": "4261.48000000",
+              "high": "4745.42000000",
+              "low": "3400.00000000",
+              "close": "4724.89000000",
+              "volume": 10015
+            },
+            {
+              "time": 1501545600000,
+              "open": "4261.48000000",
+              "high": "4745.42000000",
+              "low": "3400.00000000",
+              "close": "4724.89000000",
+              "volume": 10015
+            },
+            {
+              "time": 1501545600000,
+              "open": "4261.48000000",
+              "high": "4745.42000000",
+              "low": "3400.00000000",
+              "close": "4724.89000000",
+              "volume": 10015
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "/charts/getLatestBar/baseAsset/secondaryAsset/side/?resolution=",
+      "parameters": [
+        {
+          "paramKeyValue": "baseAsset",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Asset code. See Get Market Assets code for all market codes"
+        },
+        {
+          "paramKeyValue": "secondaryAsset",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Asset code. See Get Market Assets code for all market codes"
+        },
+        {
+          "paramKeyValue": "side",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Side ask or bid"
+        },
+        {
+          "paramKeyValue": "resolution",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "The time span that the candles will cover"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": [
+            {
+              "time": 1501545600000,
+              "open": "4261.48000000",
+              "high": "4745.42000000",
+              "low": "3400.00000000",
+              "close": "4724.89000000",
+              "volume": 10015
+            },
+            {
+              "time": 1501545600000,
+              "open": "4261.48000000",
+              "high": "4745.42000000",
+              "low": "3400.00000000",
+              "close": "4724.89000000",
+              "volume": 10015
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "/charts/settings",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "supports_search": false,
+            "supports_group_request": false,
+            "supports_marks": false,
+            "exchanges": [],
+            "symbols_types": [],
+            "supported_resolutions": "1m"
+          }
+        }
+      ]
+    },
+    {
+      "url": "/charts/resolveSymbol/baseAsset/secondaryAsset/",
+      "parameters": [
+        {
+          "paramKeyValue": "baseAsset",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Asset code. See Get Market Assets code for all market codes"
+        },
+        {
+          "paramKeyValue": "secondaryAsset",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Asset code. See Get Market Assets code for all market codes"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "name": "BTCUSD",
+            "description": "Bitcoin / US Dollars",
+            "type": "bitcoin",
+            "session": "24x7",
+            "exchange": "SWYFTX",
+            "listed_exchange": "SWYFTX",
+            "timezone": "Australia/Brisbane",
+            "minmov": 1,
+            "pricescale": 100,
+            "minmive2": 0,
+            "has_intraday": true,
+            "supported_resolutions": "1m",
+            "data_status": "streaming"
+          }
+        }
+      ]
+    },
+    {
+      "url": "/charts/v2/getBars/baseAsset/secondaryAsset/side/?resolution=&timeStart=1517458855347&timeEnd=1517458855347&limit=5000",
+      "parameters": [
+        {
+          "paramKeyValue": "baseAsset",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Asset code. See Get Market Assets code for all market codes"
+        },
+        {
+          "paramKeyValue": "secondaryAsset",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Asset code. See Get Market Assets code for all market codes"
+        },
+        {
+          "paramKeyValue": "resolution",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "The time span that the candles will cover"
+        },
+        {
+          "paramKeyValue": "side",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Side ask or bid"
+        },
+        {
+          "paramKeyValue": "timeStart",
+          "paramRequirementValue": "Required"
+        },
+        {
+          "paramKeyValue": "timeEnd",
+          "paramRequirementValue": "Required"
+        },
+        {
+          "paramKeyValue": "limit",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "Number of candles to retrieve, limit 10000"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": [
+            {
+              "time": 1501545600000,
+              "open": "4261.48000000",
+              "high": "4745.42000000",
+              "low": "3400.00000000",
+              "close": "4724.89000000",
+              "volume": 10015
+            },
+            {
+              "time": 1501545600000,
+              "open": "4261.48000000",
+              "high": "4745.42000000",
+              "low": "3400.00000000",
+              "close": "4724.89000000",
+              "volume": 10015
+            },
+            {
+              "time": 1501545600000,
+              "open": "4261.48000000",
+              "high": "4745.42000000",
+              "low": "3400.00000000",
+              "close": "4724.89000000",
+              "volume": 10015
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "/charts/v2/getLatestBar/baseAsset/secondaryAsset/side/?resolution=",
+      "parameters": [
+        {
+          "paramKeyValue": "baseAsset",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Asset code. See Get Market Assets code for all market codes"
+        },
+        {
+          "paramKeyValue": "secondaryAsset",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Asset code. See Get Market Assets code for all market codes"
+        },
+        {
+          "paramKeyValue": "side",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Side ask or bid"
+        },
+        {
+          "paramKeyValue": "resolution",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "The time span that the candles will cover"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": [
+            {
+              "time": 1501545600000,
+              "open": "4261.48000000",
+              "high": "4745.42000000",
+              "low": "3400.00000000",
+              "close": "4724.89000000",
+              "volume": 10015
+            },
+            {
+              "time": 1501545600000,
+              "open": "4261.48000000",
+              "high": "4745.42000000",
+              "low": "3400.00000000",
+              "close": "4724.89000000",
+              "volume": 10015
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "/charts/v2/settings",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "supports_search": false,
+            "supports_group_request": false,
+            "supports_marks": false,
+            "exchanges": [],
+            "symbols_types": [],
+            "supported_resolutions": "1m"
+          }
+        }
+      ]
+    },
+    {
+      "url": "/charts/v2/resolveSymbol/baseAsset/secondaryAsset/",
+      "parameters": [
+        {
+          "paramKeyValue": "baseAsset",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Asset code. See Get Market Assets code for all market codes"
+        },
+        {
+          "paramKeyValue": "secondaryAsset",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Asset code. See Get Market Assets code for all market codes"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "name": "BTCUSD",
+            "description": "Bitcoin / US Dollars",
+            "type": "bitcoin",
+            "session": "24x7",
+            "exchange": "SWYFTX",
+            "listed_exchange": "SWYFTX",
+            "timezone": "Australia/Brisbane",
+            "minmov": 1,
+            "pricescale": 100,
+            "minmive2": 0,
+            "has_intraday": true,
+            "supported_resolutions": "1m",
+            "data_status": "streaming"
+          }
+        }
+      ]
+    },
+    {
+      "url": "/funds/withdraw/assetCode/",
+      "parameters": [
+        {
+          "paramKeyValue": "assetCode",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Currency code. See Get Market Assets code for all market pairs"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "result": "success",
+            "status": 1,
+            "withdrawalId": 971
+          }
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/funds/withdrawalPermissions/assetCode/",
+      "parameters": [
+        {
+          "paramKeyValue": "assetCode",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Currency code. See Get Markets code for all market pairs"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "canWithdraw": true,
+            "message": "Withdrawals are allowed for BTC"
+          }
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/history/withdraw/asset/?limit=&page=&sortBy=",
+      "parameters": [
+        {
+          "paramKeyValue": "asset",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Asset code. See Get Market Assets code for all market codes"
+        },
+        {
+          "paramKeyValue": "limit",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "Number of entries you would like returned"
+        },
+        {
+          "paramKeyValue": "page",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "For pagination"
+        },
+        {
+          "paramKeyValue": "sortBy",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "Field and direction to sort on (prefix with +/- to indicate direction)"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "id": 1,
+            "time": 1517458855347,
+            "quantity": "1231.123",
+            "address_id": 1,
+            "status": 1
+          }
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/history/deposit/asset/?limit=&page=&sortBy=",
+      "parameters": [
+        {
+          "paramKeyValue": "asset",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Asset code. See Get Market Assets code for all market codes"
+        },
+        {
+          "paramKeyValue": "limit",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "Number of entries you would like returned"
+        },
+        {
+          "paramKeyValue": "page",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "For pagination"
+        },
+        {
+          "paramKeyValue": "sortBy",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "Field and direction to sort on (prefix with +/- to indicate direction)"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "id": 1,
+            "time": 1517458855347,
+            "quantity": "1231.123",
+            "address_id": 1,
+            "status": 1
+          }
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/history/withdraw/?limit=&page=&sortBy=",
+      "parameters": [
+        {
+          "paramKeyValue": "limit",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "Number of entries you would like returned"
+        },
+        {
+          "paramKeyValue": "page",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "For pagination"
+        },
+        {
+          "paramKeyValue": "sortBy",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "Field and direction to sort on (prefix with +/- to indicate direction)"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "id": 1,
+            "time": 1517458855347,
+            "quantity": "1231.123",
+            "address_id": 1,
+            "status": 1
+          }
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/history/deposit/?limit=&page=&sortBy=",
+      "parameters": [
+        {
+          "paramKeyValue": "limit",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "Number of entries you would like returned"
+        },
+        {
+          "paramKeyValue": "page",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "For pagination"
+        },
+        {
+          "paramKeyValue": "sortBy",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "Field and direction to sort on (prefix with +/- to indicate direction)"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "id": 1,
+            "time": 1517458855347,
+            "quantity": "1231.123",
+            "address_id": 1,
+            "status": 1
+          }
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/history/all/type/assetId/?limit=&page=&sortBy=",
+      "parameters": [
+        {
+          "paramKeyValue": "limit",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "Number of entries you would like returned"
+        },
+        {
+          "paramKeyValue": "page",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "For pagination"
+        },
+        {
+          "paramKeyValue": "sortBy",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "Field and direction to sort on (prefix with +/- to indicate direction)"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": [
+            {
+              "asset": "5",
+              "amount": 1.234,
+              "updated": 15326574115,
+              "actionType": "Deposit",
+              "status": "Failed"
+            },
+            {
+              "asset": "1",
+              "amount": 1.234,
+              "updated": 15326574115,
+              "actionType": "Withdrawal",
+              "status": "Pending"
+            }
+          ]
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/history/affiliate/?limit=&page=&sortBy=",
+      "parameters": [
+        {
+          "paramKeyValue": "limit",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "Number of entries you would like returned"
+        },
+        {
+          "paramKeyValue": "page",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "For pagination"
+        },
+        {
+          "paramKeyValue": "sortBy",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "Field and direction to sort on (prefix with +/- to indicate direction)"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": [
+            {
+              "asset": "36",
+              "amount": "1",
+              "updated": "1600055580000",
+              "actionType": "Affiliate Payout",
+              "status": 1
+            }
+          ]
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/limits/withdrawal/",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "used": 100,
+            "remaining": 9900,
+            "limit": 10000,
+            "rollingCycleHrs": 24
+          }
+        }
+      ]
+    },
+    {
+      "url": "/live-rates/asset/",
+      "parameters": [
+        {
+          "paramKeyValue": "asset",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Asset Id. See Get Market Assets id for all market id's\n\n\n/1/ returns in AUD\n\n\n/3/ returns in BTC\n\n\n/36/ returns in USD(t)"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "1": {
+              "dailyPriceChange": "1.1",
+              "midPrice": "0.72"
+            }
+          }
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/markets/assets/",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": [
+            {
+              "id": "1",
+              "name": "Australian Dollars",
+              "code": "AUD",
+              "minimum_order": "0.001",
+              "price_scale": 6,
+              "deposit_enabled": true,
+              "withdraw_enabled": true,
+              "min_confirmations": 3,
+              "min_withdrawal": 5,
+              "minimum_order_increment": 0.000001,
+              "mining_fee": 5,
+              "primary": true,
+              "secondary": true
+            },
+            {
+              "id": 2,
+              "name": "Bitcoin",
+              "code": "BTC",
+              "minimum_order": "0.001",
+              "price_scale": 6,
+              "deposit_enabled": true,
+              "withdraw_enabled": true,
+              "min_confirmations": 3,
+              "min_withdrawal": 5,
+              "minimum_order_increment": 0.000001,
+              "mining_fee": 5,
+              "primary": true,
+              "secondary": true
+            },
+            {
+              "id": 3,
+              "name": "Ethereum",
+              "code": "ETH",
+              "minimum_order": "0.001",
+              "price_scale": 6,
+              "deposit_enabled": true,
+              "withdraw_enabled": true,
+              "min_confirmations": 3,
+              "min_withdrawal": 5,
+              "minimum_order_increment": 0.000001,
+              "mining_fee": 5,
+              "primary": true,
+              "secondary": true
+            }
+          ]
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/markets/info/basic/assetCode/",
+      "parameters": [
+        {
+          "paramKeyValue": "assetCode",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "An asset code"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": [
+            {
+              "name": "Bitcoin",
+              "altName": "Bitcoin",
+              "code": "BTC",
+              "id": 3,
+              "rank": 1,
+              "buy": "12633.48917992",
+              "sell": "12608.26005155",
+              "spread": "0.20",
+              "volume24H": 31813850426.9978,
+              "marketCap": 157799606182.87747
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "/markets/info/detail/assetCode/",
+      "parameters": [
+        {
+          "paramKeyValue": "assetCode",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "An asset code"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": [
+            {
+              "name": "Bitcoin",
+              "id": 3,
+              "description": "Bitcoin (BTC) is a consensus network...",
+              "category": "coin",
+              "mineable": 1,
+              "spread": "0.21",
+              "rank": 1,
+              "rankSuffix": "st",
+              "volume": {
+                "24H": 31406997550.1617,
+                "1W": 186491755055.099,
+                "1M": 721438916725.15,
+                "marketCap": 158488801708.80835
+              },
+              "urls": {
+                "website": "https://bitcoin.org/",
+                "twitter": "null",
+                "reddit": "https://reddit.com/r/bitcoin",
+                "techDoc": "https://bitcoin.org/bitcoin.pdf",
+                "explorer": "https://blockchain.coinmarketcap.com/chain/bitcoin"
+              },
+              "supply": {
+                "circulating": 18164612,
+                "total": 18164612,
+                "max": 21000000
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "/alerts?primary=1&secondary=3&limit=10&from=1517458855347&to=1517458855347&status=1",
+      "parameters": [
+        {
+          "paramKeyValue": "primary",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "Asset ID. See Get Markets id for all market ids"
+        },
+        {
+          "paramKeyValue": "secondary",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "Asset ID. See Get Markets id for all market ids"
+        },
+        {
+          "paramKeyValue": "limit",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "Limit number of records to return"
+        },
+        {
+          "paramKeyValue": "from",
+          "paramRequirementValue": "Optional"
+        },
+        {
+          "paramKeyValue": "to",
+          "paramRequirementValue": "Optional"
+        },
+        {
+          "paramKeyValue": "status",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "The status of the price alert"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": [
+            {
+              "primary": 1,
+              "secondary": 1,
+              "price": 1000,
+              "direction": "1",
+              "status": "1",
+              "dateUpdated": 1596498281827,
+              "priceAlertUuid": "pra_G2Z7pPmKBhERjSywDQZG1z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "/alerts/primary/secondary",
+      "parameters": [
+        {
+          "paramKeyValue": "primary",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Asset ID of a Primary Asset. See Get Markets id for all market ids"
+        },
+        {
+          "paramKeyValue": "secondary",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Asset ID. See Get Markets id for all market ids"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": null
+        }
+      ]
+    },
+    {
+      "url": "/alerts",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": null
+        }
+      ]
+    },
+    {
+      "url": "/orders/rate/",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "mid": "3726.57",
+            "price": "3730.8271"
+          }
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        },
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {}
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/orders/",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "orderUuid": "ord_4TgCaoJc7pY...",
+            "order": {
+              "order_type": 1,
+              "primary_asset": 2,
+              "secondary_asset": 293,
+              "quantity_asset": 293,
+              "quantity": 4923000,
+              "trigger": 0.00000923948724,
+              "status": 1,
+              "created_time": 1623296438209,
+              "updated_time": 1623296438200,
+              "amount": 0.002053467437821649,
+              "total": 4923000,
+              "rate": 0.00000923948724,
+              "aud_value": 99.17152556194523,
+              "swyftxValue": 99.17132556194522,
+              "userCountryValue": 76.75975250020123
+            },
+            "processed": false
+          }
+        }
+      ]
+    },
+    {
+      "url": "/orders/",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "orderUuid": "ord_F5Docr9bjJuHs3BNMiSdrn"
+          }
+        }
+      ]
+    },
+    {
+      "url": "/user/balance/dust/",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": [
+            {
+              "total": 1.2384315
+            }
+          ]
+        },
+        {
+          "responseStatusValue": "500",
+          "responseExampleValue": {
+            "error": {
+              "error": "StillLoading",
+              "message": "Please try again or contact support."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/orders/orderUuid/",
+      "parameters": [
+        {
+          "paramKeyValue": "orderUuid",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "The UUID of the order to cancel"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": null
+        }
+      ]
+    },
+    {
+      "url": "/orders/assetCode?limit=&page=",
+      "parameters": [
+        {
+          "paramKeyValue": "assetCode",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Asset Code to filter by. See Get Market Assets code for all market codes"
+        },
+        {
+          "paramKeyValue": "limit",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "Number of entries you would like returned"
+        },
+        {
+          "paramKeyValue": "page",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "For pagination"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": [
+            {
+              "orderUuid": "ord_123abc...",
+              "order_type": "3",
+              "primary_asset": "1",
+              "secondary_asset": "3",
+              "quantity_asset": "1",
+              "quantity": 100,
+              "trigger": 8500,
+              "status": "1",
+              "created_time": 1596684928098,
+              "updated_time": 1596684928098,
+              "amount": 100,
+              "total": 0.01,
+              "rate": 0.01,
+              "audValue": 8501.025,
+              "userCountryValue": 8501.025,
+              "feeAmount": 12.25,
+              "feeAsset": "36",
+              "feeAudValue": 40.25,
+              "feeUserCountryValue": 40.25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "/orders/byId/orderUuid",
+      "parameters": [
+        {
+          "paramKeyValue": "orderUuid",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Unique order id"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "orderUuid": "ord_123abc...",
+            "order_type": "3",
+            "primary_asset": "1",
+            "secondary_asset": "3",
+            "quantity_asset": "1",
+            "quantity": 100,
+            "trigger": 8500,
+            "status": "1",
+            "created_time": 1596684928098,
+            "updated_time": 1596684928098,
+            "amount": 100,
+            "total": 0.01,
+            "rate": 0.01,
+            "audValue": 8501.025,
+            "userCountryValue": 8501.025,
+            "feeAmount": 12.25,
+            "feeAsset": "36",
+            "feeAudValue": 40.25,
+            "feeUserCountryValue": 40.25
+          }
+        }
+      ]
+    },
+    {
+      "url": "/templates/getUserTemplates/",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": [
+            {
+              "templateUuid": "reo_BzJYc....",
+              "createdTime": 1596165219975,
+              "label": "Monthly ETH BTC",
+              "lastTime": 1596865219975,
+              "primaryAssetId": "1",
+              "templateKey": "A1B2C3",
+              "template": [
+                {
+                  "percentage": 50,
+                  "secondaryAssetId": "5"
+                },
+                {
+                  "percentage": 50,
+                  "secondaryAssetId": "3"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "/templates/getUserTemplateStats/?templateUuid=reo_BzJYc...",
+      "parameters": [
+        {
+          "paramKeyValue": "templateUuid",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Uuid of the template to retrieve stats for"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": [
+            {
+              "secondaryAssetId": "73",
+              "percentage": 50,
+              "qty": 53251,
+              "total": 532.51,
+              "average": 0.01
+            },
+            {
+              "secondaryAssetId": "5",
+              "percentage": 50,
+              "qty": 1.459,
+              "total": 532.51,
+              "average": 364.983
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "/templates/createUserTemplate/",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "template": {
+              "3": 1,
+              "5": 1
+            },
+            "templateKey": "A1B2C3"
+          }
+        }
+      ]
+    },
+    {
+      "url": "/templates/templateUuid/",
+      "parameters": [
+        {
+          "paramKeyValue": "templateUuid",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Uuid of the template to retrieve stats for"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": null
+        }
+      ]
+    },
+    {
+      "url": "/swap/",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "buyResult": {
+              "processed": true,
+              "message": "'Abandoned buy order due to unprocessed sell order'",
+              "order": {
+                "orderUuid": "",
+                "primaryAssetId": 0,
+                "secondaryAssetId": 0,
+                "sellAmount": "",
+                "buyAmount": ""
+              }
+            },
+            "sellResult": {
+              "processed": true,
+              "message": "'Abandoned buy order due to unprocessed sell order'",
+              "order": {
+                "orderUuid": "",
+                "primaryAssetId": 0,
+                "secondaryAssetId": 0,
+                "sellAmount": "",
+                "buyAmount": ""
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/compare/exchange/",
+      "parameters": [
+        {
+          "paramKeyValue": "exchange",
+          "paramRequirementValue": "Required"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "AUD": {
+              "buy": "0.7272",
+              "sell": "0.7283",
+              "spread": "0.01"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/messages/latest/limit/",
+      "parameters": [
+        {
+          "paramKeyValue": "limit",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Maximum messages returned, returns all if empty"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": [
+            {
+              "id": 0,
+              "type": 1,
+              "title": "Android & iOS Mobile Apps",
+              "message": "Head over to ...",
+              "icon": "fa-handshake",
+              "link": "http://reddit...",
+              "created": 1577922001693,
+              "expire": 1577922001693
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "/messages/announcements/limit",
+      "parameters": [
+        {
+          "paramKeyValue": "limit",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Maximum messages returned, returns all if empty"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": [
+            {
+              "id": 0,
+              "type": 1,
+              "title": "Android & iOS Mobile Apps",
+              "message": "Head over to ...",
+              "icon": "fa-handshake",
+              "link": "http://reddit...",
+              "created": 1577922001693,
+              "expire": 1577922001693
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "/error/authentication_failed",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "401",
+          "responseExampleValue": {
+            "error": {
+              "error": "Not authorised",
+              "message": "Not authorised to access this"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/info/",
+      "parameters": [],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "version": "1.110.3",
+            "maintenanceMode": false,
+            "state": 0
+          }
+        }
+      ]
+    },
+    {
+      "url": "/portfolio/tradePriceHistory/denotedAssetId/",
+      "parameters": [
+        {
+          "paramKeyValue": "denotedAssetId",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Asset Id. See Get Market Assets id for all market id's"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "3": {
+              "avgPricePaid": "35605"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "url": "/portfolio/assetHistory/assetId/?page=&limit=&sortKey=&sortDirection=&startDate=&endDate=&type=&status=",
+      "parameters": [
+        {
+          "paramKeyValue": "assetId",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "Asset Id. See Get Market Assets id for all market id's"
+        },
+        {
+          "paramKeyValue": "page",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "page number"
+        },
+        {
+          "paramKeyValue": "limit",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "items per page"
+        },
+        {
+          "paramKeyValue": "sortKey",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "field on which to sort items"
+        },
+        {
+          "paramKeyValue": "sortDirection",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "field on which to sort items"
+        },
+        {
+          "paramKeyValue": "startDate",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "only return results from after this timestamp"
+        },
+        {
+          "paramKeyValue": "endDate",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "only return results from before this timestamp"
+        },
+        {
+          "paramKeyValue": "type",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "comma separated list of types to include"
+        },
+        {
+          "paramKeyValue": "status",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "comma separated list of statuses to include"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "items": [
+              {
+                "date": 1596684928098,
+                "amount": "0.01",
+                "movement": "0.01",
+                "approxMovement": "0.0125",
+                "userCountryValue": "1521",
+                "uuid": "ord_123abc...",
+                "type": "DEPOSIT",
+                "status": "PENDING",
+                "statusRaw": 0,
+                "orderType": 0,
+                "secondaryAsset": 0,
+                "primaryAsset": 0,
+                "secondaryAmount": "",
+                "primaryAmount": ""
+              }
+            ],
+            "runningTotal": "0.422331",
+            "recordCount": 122
+          }
+        }
+      ]
+    },
+    {
+      "url": "/portfolio/assetHistory/all/?page=&limit=&sortKey=&sortDirection=&startDate=&endDate=&type=&status=",
+      "parameters": [
+        {
+          "paramKeyValue": "page",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "page number, defaults to 1 when the value is invalid"
+        },
+        {
+          "paramKeyValue": "limit",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "items per page, defaults to 10 when the value is invalid"
+        },
+        {
+          "paramKeyValue": "sortKey",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "field on which to sort items, removed when value is invalid"
+        },
+        {
+          "paramKeyValue": "sortDirection",
+          "paramRequirementValue": "Required",
+          "paramDescriptionValue": "field on which to sort items, removed when value is invalid"
+        },
+        {
+          "paramKeyValue": "startDate",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "only return results from after this timestamp"
+        },
+        {
+          "paramKeyValue": "endDate",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "only return results from before this timestamp"
+        },
+        {
+          "paramKeyValue": "type",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "comma separated list of types to include, removed when value is invalid"
+        },
+        {
+          "paramKeyValue": "status",
+          "paramRequirementValue": "Optional",
+          "paramDescriptionValue": "comma separated list of statuses to include, removed when value is invalid"
+        }
+      ],
+      "responses": [
+        {
+          "responseStatusValue": "200",
+          "responseExampleValue": {
+            "items": [
+              {
+                "date": 1596684928098,
+                "amount": "0.01",
+                "movement": "0.01",
+                "approxMovement": "0.0125",
+                "userCountryValue": "1521",
+                "uuid": "ord_123abc...",
+                "type": "DEPOSIT",
+                "status": "PENDING",
+                "statusRaw": 0,
+                "orderType": 0,
+                "secondaryAsset": 0,
+                "primaryAsset": 0,
+                "secondaryAmount": "",
+                "primaryAmount": ""
+              }
+            ],
+            "recordCount": 122
+          }
+        }
+      ]
+    }
+  ]
+}
